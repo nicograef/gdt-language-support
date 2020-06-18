@@ -1,0 +1,25 @@
+{
+    "name": "gdt-language-support",
+    "displayName": "GDT Language Support",
+    "description": "Syntax Highlighting for GDT Files",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.46.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "gdt",
+            "aliases": ["GDT", "gdt"],
+            "extensions": [".gdt",".GDT"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "gdt",
+            "scopeName": "source.gdt",
+            "path": "./syntaxes/gdt.tmLanguage.json"
+        }]
+    }
+}
