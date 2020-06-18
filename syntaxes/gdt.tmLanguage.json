@@ -1,50 +1,86 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "GDT",
-	"patterns": [
-		{
-			"include": "#content_length"
-		},
-		{
-			"include": "#gdt_code"
-		},
-		{
-			"include": "#gdt_code_patient"
-		},
-		{
-			"include": "#gdt_code_data"
-		}
-	],
-	"repository": {
-		"content_length": {
-			"patterns": [{
-				"name": "comment.gdt",
-				"match": "^[0-9]{3}"
-			}]
-		},
-		"gdt_code": {
-			"patterns": [{
-				"name": "keyword.gdt",
-				"match": "(8000|8100|8315|8316|9206|9218)"
-			},
-			{
-				"name": "constant.numeric.gdt",
-				"match": "(102|103|132)"
-			}]
-		},
-		"gdt_code_patient": {
-			"patterns": [{
-				"name": "keyword.control.gdt",
-				"match": "(3000|3100|3101|3102|3103|3104|3105|3106|3107|3108|3609|3110|3112|3113|3114|3116|3119|3618|3619|3622|3623|3628|3633)"
-			}]
-		},
-		"gdt_code_data": {
-			"patterns": [{
-				"name": "variable.gdt",
-				"match": "(8402|6200|6201|6220|6227|6228|6302|6303|6304|6305|6329|8410)"
-			}]
-		}
-
-	},
-	"scopeName": "source.gdt"
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "GDT",
+  "patterns": [
+    {
+      "include": "#content_length"
+    },
+    {
+      "include": "#gdt_code"
+    },
+    {
+      "include": "#gdt_patient"
+    },
+    {
+      "include": "#gdt_software"
+    },
+    {
+      "include": "#gdt_data"
+    },
+    {
+      "include": "#gdt_satzart"
+    },
+    {
+      "include": "#gdt_text"
+    }
+  ],
+  "repository": {
+    "content_length": {
+      "patterns": [
+        {
+          "name": "constant.gdt",
+          "match": "^[0-9]{3}"
+        }
+      ]
+    },
+    "gdt_code": {
+      "patterns": [
+        {
+          "name": "keyword.gdt",
+          "match": "(8000|8100|8315|8316|9206|9218)"
+        }
+      ]
+    },
+    "gdt_patient": {
+      "patterns": [
+        {
+          "name": "keyword.control.gdt",
+          "match": "(3000|3100|3101|3102|3103|3104|3105|3106|3107|3108|3609|3110|3112|3113|3114|3116|3119|3618|3619|3622|3623|3628|3633)"
+        }
+      ]
+    },
+    "gdt_satzart": {
+      "patterns": [
+        {
+          "name": "invalid.gdt",
+          "match": "(6300|6301|6302|6310)"
+        }
+      ]
+    },
+    "gdt_text": {
+      "patterns": [
+        {
+          "name": "comment.gdt",
+          "match": "(6228)"
+        }
+      ]
+    },
+    "gdt_data": {
+      "patterns": [
+        {
+          "name": "variable.gdt",
+          "match": "(8402|6200|6201|6220|6227|6302|6303|6304|6305|6329|8410)"
+        }
+      ]
+    },
+    "gdt_software": {
+      "patterns": [
+        {
+          "name": "keyword.gdt",
+          "match": "(102|103|132)"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.gdt"
 }
