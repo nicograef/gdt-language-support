@@ -3,6 +3,7 @@
     "displayName": "GDT Language Support",
     "description": "Syntax Highlighting for GDT Files",
     "version": "0.0.1",
+    "publisher": "Nico Gräf",
     "engines": {
         "vscode": "^1.46.0"
     },
